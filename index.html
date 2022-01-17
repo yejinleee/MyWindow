@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Momentum</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/greetings.js"></script>
+    <script defer src="js/clock.js"></script>
+    <script defer src="js/quotes.js"></script>
+    <script defer src="js/background.js"></script>
+    <script defer src="js/todo.js"></script>
+    <script defer src="js/weather.js"></script>
+  </head>
+  <body>
+    <form id="loginForm" class="hidden">
+      <input type="text" required maxlength="15" placeholder="what is yout name?" />
+      <input type="submit" name="" value="Log in">
+      <!-- <button type="button" name="button">Log In</button> -->
+    </form>
+    <h2 id="clock" style="margin:0">00:00</h2>
+    <h1 id="greeting" class="hidden"></h1>
+    <form id="todo_form" action="index.html" method="post">
+      <input type="text" placeholder="Write a To Do and Press Enter" required>
+    </form>
+    <ul id="todo_list">
+
+    </ul>
+    <div id="quote">
+      <span></span>
+      <span></span>
+    </div>
+    <div id="weather">
+      <span></span>
+      <span></span>
+    </div>
+    <img src="" alt="">
+    <!-- <a href="https://www.notion.so/e17fc2f8b05c4a0ca03b272fd3ec6240">yejinleee</a> -->
+    <form id="imageUrl_form" method="post">
+      <input placeholder="새로운배경화면 URL 입력! "type="text" id="inputImageUrl" value="">
+    </form>
+  </body>
+</html>
