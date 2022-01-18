@@ -4,3 +4,11 @@
 .hidden{
   display: none;
 }
+.todoButton {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.todoButton:active{
+  opacity: 40%;
+}

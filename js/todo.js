@@ -1,9 +1,14 @@
 const todoForm = document.querySelector("#todo_form");
 const todoList = document.querySelector("#todo_list")
 const todoInput = document.querySelector("#todo_form input")
+const todoTagInput = document.querySelector("#tag_select")
 let todos = [];
 const TODOS_KEY = "todos"
 
+function submitTodo(){
+
+
+}
 function saveTodos(){
   localStorage.setItem(TODOS_KEY,JSON.stringify(todos));
   // JSON.stringify : object나array나 어떤코드든 stirng 형으로 바꿔줌
@@ -24,39 +29,75 @@ function deleteTodo(e){
   saveTodos();
   li.remove();
 }
+
+const testarray = [0,1,2];
+testarray.forEach((e) => {if (e===1){console.log("HERE")} else{console.log("NO")} });
 function drawLineDone(e){
   const li = e.target.parentNode;
-  li.firstChild.style.textDecoration = "line-through";
+  if (li.style.textDecoration === "line-through"){
+    li.style.textDecoration = "";
+    console.dir(li);
+    console.log(todos,'zxzx');
+    todos.forEach((eachTodo) => {
+      if (eachTodo.id ===parseInt(li.id)){
+        eachTodo.done = 0;
+      }
+    })
+    localStorage.setItem(TODOS_KEY,JSON.stringify(todos));
+  }
+  else{
+    li.style.textDecoration = "line-through";
+    console.dir(li);
+    todos.forEach((eachTodo) => {
+      if (eachTodo.id ===parseInt(li.id)){
+        eachTodo.done = 1;
+      }
+    })
+    localStorage.setItem(TODOS_KEY,JSON.stringify(todos));
+  }
 }
 function paintTodo(newTodo){
   const li = document.createElement("li");
   li.id = newTodo.id;
-  const span = document.createElement("span");
+  if(newTodo.done){
+    li.style.textDecoration = "line-through";
+  }
+  const span_tag = document.createElement("span");
+  const span_text = document.createElement("span");
   const button_check = document.createElement("button");
   button_check.innerText="✅";
+  button_check.className="todoButton";
   button_check.addEventListener("click",drawLineDone);
   const button_delete = document.createElement("button");
   button_delete.innerText="❎";
   button_delete.addEventListener("click",deleteTodo);
-  span.innerText = newTodo.text;
-  li.appendChild(span);
-  li.appendChild(button_check);
-  li.appendChild(button_delete);
+  button_delete.className = "todoButton";
+  span_text.innerText = newTodo.text;
+  span_tag.innerText = newTodo.tag;
+  li.append(span_tag," - ",span_text,button_check,button_delete);
+  //각각 .appendChild로 추가할 수 도 있음. appendChild는 DOM 함수
+  // append는 JS함수. 노드뿐아니라 문자열도 추가 가능.
   todoList.appendChild(li);
 }
 
 function handleTodoSubmit(event){
   event.preventDefault();
   const newTodo = todoInput.value;
+  const newTodoTag = todoTagInput.value;
   todoInput.value = "";
+  todoTagInput.value="";
   // todos.push(newTodo); //text로 저장. object형으로 저장하고싶다면?
-  const newTodoObject = {
-    text : newTodo,
+  let newTodoObject = {
     id : Date.now(),
+    text : newTodo,
+    tag : newTodoTag,
+    done : 0,
   }
   todos.push(newTodoObject);
   paintTodo(newTodoObject);
   saveTodos();
+
+
 }
 todoForm.addEventListener("submit",handleTodoSubmit);
 
@@ -69,12 +110,6 @@ if (savedTodos !==null){
   todos = parsedTodos;
   // parsedTodos.forEach((e)=>{console.log("this is the turn of ",e);}));
   parsedTodos.forEach(paintTodo);
-}
-
-
-
-function selectTag(e){
-  document.querySelector("#tag_select").innerText = e.value;
 }
 
 

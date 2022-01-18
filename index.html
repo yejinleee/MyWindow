@@ -20,18 +20,19 @@
     <h2 id="date" style="margin:0">2020년 00월 00일 0</h2>
     <h2 id="clock" style="margin:0">00:00</h2>
     <h1 id="greeting" class="hidden"></h1>
-    <select id="tag_select" onchange="selectTag(this)">
-      <option value="">-Please choose a Tag-</option>
-      <option value="coding">코딩</option>
-      <option value="reading">독서</option>
-      <option value="english">영어</option>
-      <option value="workout">운동</option>
-      <option value="plan">일정</option>
-      <option value="etc">기타</option>
-    </select>
-    <span id="selected_pet"></span>
+
     <form id="todo_form" action="index.html" method="post">
-      <input type="text" placeholder="Write a To Do and Press Enter" required>
+      <input type="text" placeholder="Write a To Do" required>
+      <select id="tag_select" required>
+        <option value="">-Please choose a Tag-</option>
+        <option value="coding">코딩</option>
+        <option value="reading">독서</option>
+        <option value="english">영어</option>
+        <option value="workout">운동</option>
+        <option value="plan">일정</option>
+        <option value="etc">기타</option>
+      </select>
+      <button onclick="submitTodo()">✖️</button>
     </form>
     <ul id="todo_list">
 
