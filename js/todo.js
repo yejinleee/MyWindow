@@ -18,23 +18,30 @@ function saveTodos(){
 function deleteTodo(e){
   // console.log(e.target.parentNode);
   const li = e.target.parentNode;
-  // console.log(li.id);
+  console.dir(e.target.parentNode.firstChild);
 
   todos = todos.filter(eachTodo => {return eachTodo.id!==parseInt(li.id)});
   saveTodos();
   li.remove();
 }
-
+function drawLineDone(e){
+  const li = e.target.parentNode;
+  li.firstChild.style.textDecoration = "line-through";
+}
 function paintTodo(newTodo){
   const li = document.createElement("li");
   li.id = newTodo.id;
   const span = document.createElement("span");
-  const button = document.createElement("button");
-  button.innerText="❎";
-  button.addEventListener("click",deleteTodo);
+  const button_check = document.createElement("button");
+  button_check.innerText="✅";
+  button_check.addEventListener("click",drawLineDone);
+  const button_delete = document.createElement("button");
+  button_delete.innerText="❎";
+  button_delete.addEventListener("click",deleteTodo);
   span.innerText = newTodo.text;
   li.appendChild(span);
-  li.appendChild(button);
+  li.appendChild(button_check);
+  li.appendChild(button_delete);
   todoList.appendChild(li);
 }
 
@@ -42,7 +49,7 @@ function handleTodoSubmit(event){
   event.preventDefault();
   const newTodo = todoInput.value;
   todoInput.value = "";
-  // todos.push(newTodo); //text로 저장. object형으로 저장하과싶다면?
+  // todos.push(newTodo); //text로 저장. object형으로 저장하고싶다면?
   const newTodoObject = {
     text : newTodo,
     id : Date.now(),
@@ -66,6 +73,9 @@ if (savedTodos !==null){
 
 
 
+function selectTag(e){
+  document.querySelector("#tag_select").innerText = e.value;
+}
 
 
 
