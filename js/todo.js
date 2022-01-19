@@ -30,8 +30,6 @@ function deleteTodo(e){
   li.remove();
 }
 
-const testarray = [0,1,2];
-testarray.forEach((e) => {if (e===1){console.log("HERE")} else{console.log("NO")} });
 function drawLineDone(e){
   const li = e.target.parentNode;
   if (li.style.textDecoration === "line-through"){
