@@ -110,7 +110,3 @@ if (savedTodos !==null){
   parsedTodos.forEach(paintTodo);
 }
 
-
-
-
-//
