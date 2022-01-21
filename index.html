@@ -10,7 +10,7 @@
 <!--    <script defer src="js/background.js"></script>-->
     <script defer src="js/todo.js"></script>
 <!--    <script defer src="js/weather.js"></script>-->
-    <script defer src="js/dust.js"></script>
+<!--    <script defer src="js/dust.js"></script>-->
 
   </head>
   <body>
@@ -23,7 +23,6 @@
     <h2 id="clock" style="margin:0">00:00</h2>
     <h1 id="greeting" class="hidden"></h1>
     <a href="https://cors-anywhere.herokuapp.com/corsdemo">heroku 클릭먼저..!</a>
-    <a href="https://sgis.kostat.go.kr/developer/html/newOpenApi/api/develop/dvp.html?type1=02&type2=01&seq=1#">엑세스토큰받아오기</a>
     <form id="todo_form" action="index.html" method="post">
       <input type="text" placeholder="Write a To Do" required>
       <select id="tag_select" required>
@@ -35,7 +34,7 @@
         <option value="plan">일정</option>
         <option value="etc">기타</option>
       </select>
-      <button onclick="submitTodo()">✖️</button>
+      <button>✖️</button>
     </form>
     <ul id="todo_list">
 
@@ -43,6 +42,7 @@
     <ul id="done_list">
       what I done
     </ul>
+    <progress id="progress" max="100" value="0"></progress>
     <div id="quote">
       <span></span>
       <span></span>

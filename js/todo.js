@@ -1,14 +1,12 @@
 const todoForm = document.querySelector("#todo_form");
 const todoList = document.querySelector("#todo_list")
 const todoInput = document.querySelector("#todo_form input")
-const todoTagInput = document.querySelector("#tag_select")
+const todoTagInput = document.querySelector("#tag_select");
+const progress = document.querySelector("#progress");
+
 let todos = [];
 const TODOS_KEY = "todos"
 
-function submitTodo(){
-
-
-}
 function saveTodos(){
   localStorage.setItem(TODOS_KEY,JSON.stringify(todos));
   // JSON.stringify : object나array나 어떤코드든 stirng 형으로 바꿔줌
@@ -19,7 +17,15 @@ function saveTodos(){
 // function 필터함수(item){T/F로 반환할 조건과 return}
 // 적용할Array.filter(필터함수)
 
-
+function howMuchDone(){
+  let cnt=0;
+  todos.forEach((eachTodo) => {
+    if (eachTodo.done ===1){
+      cnt=cnt +1;
+    }
+  })
+  return cnt;
+}
 function deleteTodo(e){
   // console.log(e.target.parentNode);
   const li = e.target.parentNode;
@@ -28,37 +34,47 @@ function deleteTodo(e){
   todos = todos.filter(eachTodo => {return eachTodo.id!==parseInt(li.id)});
   saveTodos();
   li.remove();
+  console.log(howMuchDone(),todos.length);
+  progress.value = (howMuchDone()/todos.length)*100;
+
 }
+
 
 function drawLineDone(e){
   const li = e.target.parentNode;
-  if (li.style.textDecoration === "line-through"){
+  if (li.style.textDecoration === "line-through"){ //완료눌러있던 투두면
     li.style.textDecoration = "";
-    console.dir(li);
-    console.log(todos,'zxzx');
+    // console.dir(li);
+    // console.log(todos,'zxzx');
     todos.forEach((eachTodo) => {
       if (eachTodo.id ===parseInt(li.id)){
         eachTodo.done = 0;
       }
     })
     localStorage.setItem(TODOS_KEY,JSON.stringify(todos));
+    progress.value = progress.value - (1/todos.length)*100;
+
   }
-  else{
+  else{ //완료하려는 투두면
     li.style.textDecoration = "line-through";
-    console.dir(li);
+    // console.dir(li);
     todos.forEach((eachTodo) => {
       if (eachTodo.id ===parseInt(li.id)){
         eachTodo.done = 1;
       }
     })
     localStorage.setItem(TODOS_KEY,JSON.stringify(todos));
+    progress.value = progress.value + (1/todos.length)*100;
+
   }
 }
 function paintTodo(newTodo){
   const li = document.createElement("li");
+  const progress = document.querySelector("#progress");
   li.id = newTodo.id;
   if(newTodo.done){
     li.style.textDecoration = "line-through";
+    progress.value = progress.value+((1/todos.length)*100);
   }
   const span_tag = document.createElement("span");
   const span_text = document.createElement("span");
@@ -76,6 +92,7 @@ function paintTodo(newTodo){
   //각각 .appendChild로 추가할 수 도 있음. appendChild는 DOM 함수
   // append는 JS함수. 노드뿐아니라 문자열도 추가 가능.
   todoList.appendChild(li);
+  progress.value = (howMuchDone()/todos.length)*100;
 }
 
 function handleTodoSubmit(event){
