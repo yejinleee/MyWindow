@@ -10,7 +10,6 @@ function saveTodos(){
   localStorage.setItem(TODOS_KEY,JSON.stringify(todos));
   // JSON.stringify : object나array나 어떤코드든 stirng 형으로 바꿔줌
   // JSON.parse : string을 object 로 (Ex)JSON.parse(["1,2,3]")  -->> [1,2,3]
-
 }
 
 // function 필터함수(item){T/F로 반환할 조건과 return}
@@ -27,7 +26,9 @@ function howMuchDone(){
 }
 
 function changeProgress(){
-  progress.value = (howMuchDone()/todos.length)*100;
+  if (todos.length !== 0){
+    progress.value = (howMuchDone()/todos.length)*100;
+  }
   const progressPercent = document.querySelector("#progressPercent");
   progressPercent.innerText = `${Math.ceil(progress.value)}% 달성!`;
 }
@@ -162,7 +163,6 @@ todoForm.addEventListener("submit",handleTodoSubmit);
 const savedTodos = localStorage.getItem(TODOS_KEY); //string
 if (savedTodos !==null){
   const parsedTodos = JSON.parse(savedTodos); //object
-
   todos = parsedTodos;
   parsedTodos.forEach(paintTodo);
 }
