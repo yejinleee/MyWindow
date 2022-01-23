@@ -11,6 +11,7 @@
     <script defer src="js/todo.js"></script>
 <!--    <script defer src="js/weather.js"></script>-->
 <!--    <script defer src="js/dust.js"></script>-->
+    <script defer src="js/tracker.js"></script>
 
   </head>
   <body>
@@ -42,8 +43,14 @@
     <ul id="done_list">
       what I done
     </ul>
-    <progress id="progress" max="100" value="0"></progress>
+    <progress id="progress" max="100" value=0></progress>
     <span id="progressPercent"></span>
+    <div class="tracker_div">
+      <form id="routineForm">
+        <input type="text" required maxlength="15" placeholder="Write a routine" />
+         <button >MAKE</button>
+      </form>
+    </div>
     <div id="quote">
       <span></span>
       <span></span>

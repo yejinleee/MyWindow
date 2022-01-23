@@ -12,3 +12,22 @@
 .todoButton:active{
   opacity: 40%;
 }
+.plusCircleButton{
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.routine_div{
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+}
+.filledCircle{
+  fill:#a0a0ff;!important;
+  stroke: black;
+  cursor: pointer;
+}
+.unfilledCircle{
+  fill:white;
+  stroke: black;
+  cursor: pointer;
+}
