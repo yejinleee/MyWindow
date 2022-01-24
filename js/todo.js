@@ -95,9 +95,6 @@ function editTodo(e){
   console.log(form);
   console.log(editInput);
   form.addEventListener("submit",todoChange);
-  // editTodo는 크레용누르면 input 뜨게하는거
-  // change() 모이런함수만들어두고 "submit"으로 호출
-  // 이함수 : 그리팅에서 onLoginSubmit처럼
 }
 
 function paintTodo(newTodo){

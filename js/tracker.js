@@ -74,16 +74,29 @@ function makeFilled(circlesSpan,index){
     svg.append(circle);
     circlesSpan.append(svg);
 }
+function deleteRoutine(e){
+    const routineDiv = e.target.parentNode;
+    routines = routines.filter((each)=>{
+        return each.id !== parseInt(routineDiv.id);
+    })
+    saveRoutines();
+    routineDiv.remove();
+}
 function makeRoutine(newRoutine){
     const routine_div = document.createElement("div");
     routine_div.className="routine_div";
     routine_div.id=newRoutine.id;
     const span = document.createElement("span");
     span.innerText=newRoutine.text;
+    const deleteButton = document.createElement("button");
+    deleteButton.innerText = "❌";
+    deleteButton.className ="deleteRoutineButton";
     const plusButton = document.createElement("button");
     plusButton.innerText = "➕";
     plusButton.className = "plusCircleButton";
+
     const circlesSpan = document.createElement("circlesSpan");
+
 
     let index;
     for (let i=0;i< routines.length;i++) {
@@ -100,9 +113,10 @@ function makeRoutine(newRoutine){
             makeFilled(circlesSpan,index);
         }
     }
-    routine_div.append(span,plusButton,circlesSpan);
+    routine_div.append(span,deleteButton,plusButton,circlesSpan);
 
     plusButton.addEventListener("click",function(){makeCircle(circlesSpan,index);});
+    deleteButton.addEventListener("click",deleteRoutine);
 
     tracker_div.append(routine_div);
 }

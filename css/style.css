@@ -4,7 +4,7 @@
 .hidden{
   display: none;
 }
-.todoButton {
+.todoButton, .plusCircleButton, .deleteRoutineButton{
   border: none;
   background: none;
   cursor: pointer;
@@ -12,14 +12,9 @@
 .todoButton:active{
   opacity: 40%;
 }
-.plusCircleButton{
-  border: none;
-  background: none;
-  cursor: pointer;
-}
 .routine_div{
   display: grid;
-  grid-template-columns: auto auto 1fr;
+  grid-template-columns: auto auto auto 1fr;
 }
 .filledCircle{
   fill:#a0a0ff;!important;
