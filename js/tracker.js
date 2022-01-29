@@ -1,4 +1,4 @@
-const tracker_div = document.querySelector(".tracker_div");
+const tracker_div = document.querySelector(".div_tracker");
 const routineForm = document.querySelector("#routineForm");
 const routineInput = routineForm.querySelector("input");
 

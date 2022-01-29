@@ -7,7 +7,7 @@
     <script defer src="js/greetings.js"></script>
     <script defer src="js/clock.js"></script>
     <script defer src="js/quotes.js"></script>
-<!--    <script defer src="js/background.js"></script>-->
+    <script defer src="js/background.js"></script>
     <script defer src="js/todo.js"></script>
 <!--    <script defer src="js/weather.js"></script>-->
 <!--    <script defer src="js/dust.js"></script>-->
@@ -15,54 +15,64 @@
 
   </head>
   <body>
-    <form id="loginForm" class="hidden">
-      <input type="text" required maxlength="15" placeholder="what is yout name?" />
-      <input type="submit" name="" value="Log in">
-      <!-- <button type="button" name="button">Log In</button> -->
-    </form>
-    <h2 id="date" style="margin:0">2020년 00월 00일 0</h2>
-    <h2 id="clock" style="margin:0">00:00</h2>
-    <h1 id="greeting" class="hidden"></h1>
-    <a href="https://cors-anywhere.herokuapp.com/corsdemo">heroku 클릭먼저..!</a>
-    <form id="todo_form" action="index.html" method="post">
-      <input type="text" placeholder="Write a To Do" required>
-      <select id="tag_select" required>
-        <option value="">-Please choose a Tag-</option>
-        <option value="coding">코딩</option>
-        <option value="reading">독서</option>
-        <option value="english">영어</option>
-        <option value="workout">운동</option>
-        <option value="plan">일정</option>
-        <option value="etc">기타</option>
-      </select>
-      <button>✖️</button>
-    </form>
-    <ul id="todo_list">
-
-    </ul>
-    <ul id="done_list">
-      what I done
-    </ul>
-    <progress id="progress" max="100" value=0></progress>
-    <span id="progressPercent"></span>
-    <div class="tracker_div">
-      <form id="routineForm">
-        <input type="text" required maxlength="15" placeholder="Write a routine" />
-         <button >MAKE</button>
+    <div class="container">
+      <form id="loginForm" class="hidden">
+        <input type="text" required maxlength="15" placeholder="what is yout name?" />
+        <input type="submit" name="" value="Log in">
+        <!-- <button type="button" name="button">Log In</button> -->
       </form>
+      <div class="dateNclock">
+        <h2 id="date" style="margin:0">2020년 00월 00일 0</h2>
+        <h2 id="clock" style="margin:0">00:00</h2>
+      </div>
+      <h1 id="greeting" class="hidden"></h1>
+  <!--    <a href="https://cors-anywhere.herokuapp.com/corsdemo">heroku 클릭먼저..!</a>-->
+      <section>
+        <div class="div_todo">
+          <form id="todo_form" action="index.html" method="post">
+            <input type="text" placeholder="Write a To Do" required>
+            <select id="tag_select" required>
+              <option value="">-Please choose a Tag-</option>
+              <option value="coding">코딩</option>
+              <option value="reading">독서</option>
+              <option value="english">영어</option>
+              <option value="workout">운동</option>
+              <option value="plan">일정</option>
+              <option value="etc">기타</option>
+            </select>
+            <button>✖️</button>
+          </form>
+          <ul id="todo_list">
+
+          </ul>
+          <ul id="done_list">
+            what I done
+          </ul>
+        </div>
+        <div class="div_progress">
+          <progress id="progress" max="100" value=0></progress>
+          <span id="progressPercent"></span>
+        </div>
+
+        <div class="div_tracker">
+          <form id="routineForm">
+            <input type="text" required maxlength="15" placeholder="Write a routine" />
+             <button >MAKE</button>
+          </form>
+        </div>
+      </section>
+      <div id="quote">
+        <span></span>
+        <span></span>
+      </div>
+      <div id="weather">
+        <span></span>
+        <span></span>
+      </div>
+<!--      <form id="imageUrl_form" method="post">-->
+<!--        <input placeholder="새로운 배경화면 URL 입력! "type="text" id="inputImageUrl" value="">-->
+<!--      </form>-->
+      <span id="dust"> </span>
     </div>
-    <div id="quote">
-      <span></span>
-      <span></span>
-    </div>
-    <div id="weather">
-      <span></span>
-      <span></span>
-    </div>
-    <img src="" alt="">
-    <form id="imageUrl_form" method="post">
-      <input placeholder="새로운 배경화면 URL 입력! "type="text" id="inputImageUrl" value="">
-    </form>
-    <span id="dust"> </span>
   </body>
 </html>

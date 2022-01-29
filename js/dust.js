@@ -1,5 +1,5 @@
-// // 위도 latitude 북남
-// // 경도 longitude
+// 위도 latitude 북남
+// 경도 longitude
 
 // 좌표번환 accessToken 발급
 const API_AUTH = "https://sgisapi.kostat.go.kr/OpenAPI3/auth/authentication.json";

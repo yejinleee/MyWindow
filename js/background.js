@@ -23,12 +23,19 @@ const chosenImageUrl = imagesUrl[Math.floor(Math.random()*images.length)];
 // bgimage.src = `img/${chosenImage}`;
 // document.body.appendChild(bgimage);
 
+// const container = document.querySelector(".container");
+// container.style.backgroundImage = `url(${`img/${chosenImage}`})`;
+// container.style.backgroundRepeat = "no-repeat";
+// container.style.backgroundSize = "cover";
+// container.style.height = "100vh";
+// container.style.margin = '0';
+
 // document.body.style.backgroundImage = `url(${`img/${chosenImage}`})`;
-document.body.style.backgroundImage = `url(${chosenImageUrl})`;
-document.body.style.backgroundRepeat = "no-repeat";
-document.body.style.backgroundSize = "cover";
-document.body.style.height = "100vh";
-document.body.style.margin = '0';
+// document.body.style.backgroundImage = `url(${chosenImageUrl})`;
+// document.body.style.backgroundRepeat = "no-repeat";
+// document.body.style.backgroundSize = "cover";
+// document.body.style.height = "100vh";
+// document.body.style.margin = '0';
 
 // = `img/${chosenImage}`;
 // background-repeat : no-repeat;
