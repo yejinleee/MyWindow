@@ -30,7 +30,7 @@ function changeProgress(){
     progress.value = (howMuchDone()/todos.length)*100;
   }
   const progressPercent = document.querySelector("#progressPercent");
-  progressPercent.innerText = `${Math.ceil(progress.value)}% 달성!`;
+  progressPercent.innerText = `${Math.ceil(progress.value)}%`;
 }
 function deleteTodo(e){
   // console.log(e.target.parentNode);

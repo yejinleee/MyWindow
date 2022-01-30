@@ -16,6 +16,7 @@
   </head>
   <body>
     <div class="container">
+      <h1 id="greeting" class="hidden"></h1>
       <form id="loginForm" class="hidden">
         <input type="text" required maxlength="15" placeholder="what is yout name?" />
         <input type="submit" name="" value="Log in">
@@ -25,8 +26,14 @@
         <h2 id="date" style="margin:0">2020년 00월 00일 0</h2>
         <h2 id="clock" style="margin:0">00:00</h2>
       </div>
-      <h1 id="greeting" class="hidden"></h1>
   <!--    <a href="https://cors-anywhere.herokuapp.com/corsdemo">heroku 클릭먼저..!</a>-->
+      <div class="div_progress">
+        <progress id="progress" max="100" value=0></progress>
+        <span id="progressPercent"></span>
+      </div>
+
+
+
       <section>
         <div class="div_todo">
           <form id="todo_form" action="index.html" method="post">
@@ -45,14 +52,9 @@
           <ul id="todo_list">
 
           </ul>
-          <ul id="done_list">
-            what I done
-          </ul>
+
         </div>
-        <div class="div_progress">
-          <progress id="progress" max="100" value=0></progress>
-          <span id="progressPercent"></span>
-        </div>
+
 
         <div class="div_tracker">
           <form id="routineForm">

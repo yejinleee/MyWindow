@@ -88,6 +88,8 @@ function makeRoutine(newRoutine){
     routine_div.id=newRoutine.id;
     const span = document.createElement("span");
     span.innerText=newRoutine.text;
+    span.style.display = "flex";
+    span.style.alignItems="center";
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "❌";
     deleteButton.className ="deleteRoutineButton";
@@ -95,8 +97,10 @@ function makeRoutine(newRoutine){
     plusButton.innerText = "➕";
     plusButton.className = "plusCircleButton";
 
+    const circleNplus = document.createElement("circleNplus");
     const circlesSpan = document.createElement("circlesSpan");
-
+    circlesSpan.style.verticalAlign = "middle";
+    circleNplus.append(circlesSpan,plusButton);
 
     let index;
     for (let i=0;i< routines.length;i++) {
@@ -113,7 +117,7 @@ function makeRoutine(newRoutine){
             makeFilled(circlesSpan,index);
         }
     }
-    routine_div.append(span,deleteButton,plusButton,circlesSpan);
+    routine_div.append(span,circleNplus,deleteButton);
 
     plusButton.addEventListener("click",function(){makeCircle(circlesSpan,index);});
     deleteButton.addEventListener("click",deleteRoutine);

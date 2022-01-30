@@ -33,7 +33,7 @@ loginForm.addEventListener("submit",onLoginSubmit);
 
 function paintGreeting(username){
   greeting.classList.remove(HIDDEN_CLASSNAME);
-  greeting.innerText = `Hi! ${username}`;
+  greeting.innerText = `${username}'s Today`;
 }
 const saveUserName = localStorage.getItem("username");
 if( saveUserName ===null){

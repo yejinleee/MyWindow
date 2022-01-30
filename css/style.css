@@ -1,6 +1,18 @@
 body{
   margin:0;
 }
+#greeting{
+  margin:0;
+  position: sticky;
+  top:0;
+  background-color: white;
+  font-size:20px;
+  padding-left:40px;
+}
+@media(min-width: 770px){
+  #greeting{
+  }
+}
 .container {
   width: 100%;
   height: 100%;
@@ -38,14 +50,27 @@ body{
   align-items: center;
   flex-direction: column;
   font-size: 3vw;
+  padding-top:15vh;
 }
 
-
+.div_progress{
+  text-align: center;
+  font-size: 3vw;
+}
 
 /*본문섹션*/
 section{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: space-evenly;
+  margin:10px;
+  font-size: 1.6vw;
+}
+@media (max-width:770px){
+  section{
+    display: flex;
+    justify-content: space-between;
+    margin:10px;
+  }
 }
 
 
@@ -59,7 +84,8 @@ section{
 }
 .routine_div{
   display: grid;
-  grid-template-columns: auto auto auto 1fr;
+  grid-template-columns: auto 210px auto;
+  column-gap: 5px;
 }
 .filledCircle{
   fill:#a0a0ff;!important;
@@ -71,3 +97,4 @@ section{
   stroke: black;
   cursor: pointer;
 }
+

@@ -12,7 +12,7 @@ function handelImageUrlSubmit(event){
   imagesUrl.push(newImageUrl);
   console.log(imagesUrl);
 }
-imageUrlForm.addEventListener("submit",handelImageUrlSubmit);
+// imageUrlForm.addEventListener("submit",handelImageUrlSubmit);
 // images.append("https://img.theqoo.net/img/OTnsp.png")
 // Math/random *범위 : (0~범위-1)수에서 랜덤
 const chosenImage = images[Math.floor(Math.random()*images.length)];
