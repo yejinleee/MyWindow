@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa1d06df-12e7-4466-afdc-64d76be12efe" name="Default Changelist" comment="design ...tracker" />
+    <list default="true" id="fa1d06df-12e7-4466-afdc-64d76be12efe" name="Default Changelist" comment="design ...tracker">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +43,8 @@
       <workItem from="1643506521995" duration="57000" />
       <workItem from="1643506606497" duration="6203000" />
       <workItem from="1643591235175" duration="2113000" />
+      <workItem from="1643804746698" duration="20000" />
+      <workItem from="1643888815713" duration="1741000" />
     </task>
     <task id="LOCAL-00001" summary="design ...">
       <created>1643443280352</created>
@@ -68,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643593362310</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="design ...tracker">
+      <created>1643804757245</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1643804757245</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

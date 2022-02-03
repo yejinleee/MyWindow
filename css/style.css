@@ -83,10 +83,32 @@ section{
   opacity: 40%;
 }
 
+/*투두*/
+.loginForm_field input, .loginForm_field select{
+  border-radius: 0.25em;
+  border-style: solid;
+  border-color: #2b2b2b;
+  border-width: 2px;
+  padding-top:0.3em;
+  padding-bottom: 0.3em;
+}
+.loginForm_field{
+  display: grid;
+  grid-template-columns: 10em 1fr;
+  grid-gap: 3px;
+}
 
+.loginForm_field select{
+  /*width: 25%;*/
+}
+.loginForm_field input{
+  padding-left: 2em;
+  padding-right: 4em;
+  /*width: 60%;*/
+}
 
 /*트래커*/
-.form_field{
+.form_field, .loginForm_field{
   position:relative;
   margin-bottom: 4px;
 }
@@ -97,7 +119,7 @@ section{
   border-width: 2px;
   padding: 0.3em 8em 0.3em 2em;
 }
-.form_field button{
+.form_field button, .loginForm_field button{
   all:unset;
   position: absolute;
   top: 50%;

@@ -37,17 +37,19 @@
       <section>
         <div class="div_todo">
           <form id="todo_form" action="index.html" method="post">
-            <input type="text" placeholder="Write a To Do" required>
-            <select id="tag_select" required>
-              <option value="">-Please choose a Tag-</option>
-              <option value="coding">코딩</option>
-              <option value="reading">독서</option>
-              <option value="english">영어</option>
-              <option value="workout">운동</option>
-              <option value="plan">일정</option>
-              <option value="etc">기타</option>
-            </select>
-            <button>✖️</button>
+            <div class="loginForm_field">
+              <select id="tag_select" required>
+                <option value="">-Please choose a Tag-</option>
+                <option value="coding">코딩</option>
+                <option value="reading">독서</option>
+                <option value="english">영어</option>
+                <option value="workout">운동</option>
+                <option value="plan">일정</option>
+                <option value="etc">기타</option>
+              </select>
+              <input type="text" placeholder="Write a To Do" required>
+              <button>✖️</button>
+            </div>
           </form>
           <ul id="todo_list">
 
