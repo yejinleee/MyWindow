@@ -27,6 +27,7 @@
   "homepage": "https://github.com/yejinleee/TodoWindow#readme",
   "dependencies": {
     "express": "^4.17.2",
+    "pug": "^3.0.2",
     "socket.io": "^4.4.1"
   }
 }

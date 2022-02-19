@@ -7,6 +7,17 @@ import {instrument} from "@socket.io/admin-ui";
 const app = express();
 const handleListen = ()=>console.log(`Listening on http://localhost:3000`)
 
+
+////
+
+app.set('view engine',"pug");
+app.set("views",__dirname + "/views");
+app.use("/public", express.static(__dirname+ "/public"));
+app.get("/",(req,res)=> res.render("home"));
+
+////
+
+
 //http 서버 
 const server = http.createServer(app); //app.listen안해도 서버에 접근할 수 있게 서버 만듦.
 // //ws서버
