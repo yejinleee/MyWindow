@@ -11,6 +11,8 @@
     "nodemon": "^2.0.15"
   },
   "scripts": {
+    "start" : "nodemon",
+    "heroku-postbuild": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon"
   },
