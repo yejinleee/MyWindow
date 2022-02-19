@@ -134,7 +134,7 @@ section{
   column-gap: 5px;
 }
 .filledCircle{
-  fill:#a0a0ff;!important;
+  fill:#a0a0ff;
   stroke: black;
   cursor: pointer;
 }
