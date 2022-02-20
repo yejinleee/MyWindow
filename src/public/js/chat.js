@@ -7,9 +7,8 @@ const room = document.querySelector("#room");
 room.hidden=true;
 
 const username = localStorage.getItem("username");
-
-// let nickname = 'annonymous'; //
 let nickname = localStorage.getItem("username");
+
 function addMessage(message){
     const ul = room.querySelector("ul");
     const li = document.createElement("li")
@@ -103,8 +102,6 @@ function chatOpen(){
         container.classList.remove("chatOpen_container");
         chat.classList.remove("chatOpen_chat");
         goChatBtn.classList.remove("chatOpen_btn")
-
-        // goChatBtn.style.right=0;
     }
 }
 goChatBtn.addEventListener("click",chatOpen);
