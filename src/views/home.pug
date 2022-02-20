@@ -4,7 +4,7 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
+        title MY
         style
             include ../css/style.css
 
@@ -12,20 +12,20 @@ html(lang="en")
         div.container
             h1#greeting.hidden 
             form#loginForm.hidden
-                input(type="text", required)
-                input(type="submit")
+                input(type="text", required, maxlength="15", placeholder="what is your name?")
+                input(type="submit" name="" value="Log in")
             div.dateNclock
-                h2#date
-                h2#clock 
+                h2#date(style="margin:0") 2020년 00월 00일 0
+                h2#clock(style="margin:0") 00:00
             div.div_progress
-                progress#progress
+                progress#progress(max="100" value=0)
                 span#progressPercent
             
             section 
                 div.div_todo
                     form#todo_form
                         div.loginForm_field
-                            select#tag_select
+                            select#tag_select(required)
                                 option(value="") Please choose a Tag-
                                 option(value="coding") 코딩
                                 option(value="reading") 독서
@@ -33,13 +33,13 @@ html(lang="en")
                                 option(value="workout") 운동
                                 option(value="plan") 일정
                                 option(value="etc") 기타
-                            input(type="text")
+                            input(type="text" placeholder="Write a To Do" required)
                             button ✖️
                     ul#todo_list
                 div.div_tracker
                     form#routineForm
                         div.form_field
-                            input(type="text") 
+                            input(type="text" required maxlength="15" placeholder="Write a routine") 
                             button ✖️
             div#quote
                 span
@@ -51,19 +51,19 @@ html(lang="en")
             div
                 div#welcome
                     form
-                        input(type="text")     
-                        button
+                        input(type="text" placeholder="room name" required)     
+                        button Enter Room
                     h4 Open Rooms:
                         ul
-                div
+                div#room
                     h3 
                     ul 
                     h4 
                     form#nickname
-                        input(type="text")  
+                        input(type="text" placeholder="nickname" required)  
                         button Save
-                    form#messgae
-                        input(type="text")
+                    form#message
+                        input(type="text" placeholder="message" required)
                         button Send
 
 

@@ -45,6 +45,7 @@ function showRoom(){
     messageForm.addEventListener("submit",handleMessageSubmit);
 }
 function handleRoomSubmit(event){
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     event.preventDefault();
     console.log(event.value);
     const input = form.querySelector("input");
