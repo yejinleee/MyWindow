@@ -3,7 +3,6 @@ const loginInput=loginForm.querySelector("input")
 const loginButton = loginForm.querySelector("button")
 const greeting = document.querySelector("#greeting")
 
-console.log("greetings");
 function showId(){
   const inputValue = loginInput.value;
   if (inputValue ===""){

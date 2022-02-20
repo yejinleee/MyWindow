@@ -6,7 +6,10 @@ const room = document.querySelector("#room");
 
 room.hidden=true;
 
-let nickname = 'annonymous';
+const username = localStorage.getItem("username");
+
+// let nickname = 'annonymous'; //
+let nickname = localStorage.getItem("username");
 function addMessage(message){
     const ul = room.querySelector("ul");
     const li = document.createElement("li")
@@ -41,15 +44,14 @@ function showRoom(){
     h3.innerText = `Room : ${roomname}`;
     const nicknameForm = room.querySelector("#nickname");
     const messageForm = room.querySelector("#message");
-    nicknameForm.addEventListener("submit",handleNicknameSubmit);
+    socket.emit("nicknameSave", username);
+    // nicknameForm.addEventListener("submit",handleNicknameSubmit);
     messageForm.addEventListener("submit",handleMessageSubmit);
 }
 function handleRoomSubmit(event){
-    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     event.preventDefault();
-    console.log(event.value);
     const input = form.querySelector("input");
-    socket.emit("enter_room", input.value, showRoom); 
+    socket.emit("enter_room", input.value,username, showRoom); 
     roomname = input.value;
     input.value = "";
 }
@@ -83,3 +85,26 @@ socket.on("room_change", (rooms ) =>{
         roomList.append(li);
     })
 });
+
+
+// 채팅버튼
+const goChatBtn = document.querySelector(".goChat");
+const container = document.querySelector(".container");
+const chat = document.querySelector(".chat");
+let chatOpened = false;
+function chatOpen(){
+    chatOpened = !chatOpened;
+    if (chatOpened===true){
+        container.classList.add("chatOpen_container");
+        chat.classList.add("chatOpen_chat");
+        goChatBtn.classList.add("chatOpen_btn")
+    }
+    else{
+        container.classList.remove("chatOpen_container");
+        chat.classList.remove("chatOpen_chat");
+        goChatBtn.classList.remove("chatOpen_btn")
+
+        // goChatBtn.style.right=0;
+    }
+}
+goChatBtn.addEventListener("click",chatOpen);

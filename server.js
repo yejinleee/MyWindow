@@ -58,7 +58,8 @@ wsServer.on("connection", (socket) =>{
     socket.onAny((event)=>{
         console.log('발생한 Socket Event : ',event);
     })
-    socket.on("enter_room", (roomName,done) =>{
+    socket.on("enter_room", (roomName,username,done) =>{
+        socket["nickname"] = username;
         socket.join(roomName);
         done();
         socket.to(roomName).emit("welcome", socket.nickname, countRoom(roomName));
@@ -72,12 +73,11 @@ wsServer.on("connection", (socket) =>{
         wsServer.sockets.emit("room_change",publicRooms());
     })
     socket.on("new_message", ( msg, room, done)=>{
-        socket.to(room).emit("new_message", `${socket.nickname} : ${msg}`); //여기 new_message는 바로위 new_message랑 다른 지칭인데. 이렇게 같은 단어여도 된다는것
+        socket.to(room).emit("new_message", `${socket.nickname} : ${msg} :`); //여기 new_message는 바로위 new_message랑 다른 지칭인데. 이렇게 같은 단어여도 된다는것
         done(); //실행은 프론트!
     })
     socket.on("nicknameSave", (nickname) => {
         socket["nickname"]=nickname;
-
     });
 })
 
