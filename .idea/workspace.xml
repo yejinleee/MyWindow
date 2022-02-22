@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa1d06df-12e7-4466-afdc-64d76be12efe" name="Default Changelist" comment="edit">
+    <list default="true" id="fa1d06df-12e7-4466-afdc-64d76be12efe" name="Default Changelist" comment="todo css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/public/js/todo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/todo.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +45,7 @@
       <workItem from="1643804746698" duration="20000" />
       <workItem from="1643888815713" duration="2124000" />
       <workItem from="1644070231850" duration="30000" />
-      <workItem from="1645505098105" duration="2707000" />
+      <workItem from="1645505098105" duration="5483000" />
     </task>
     <task id="LOCAL-00001" summary="design ...">
       <created>1643443280352</created>
@@ -90,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643890952856</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="todo css">
+      <created>1645507901043</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1645507901043</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,6 +118,7 @@
     <MESSAGE value="design ..." />
     <MESSAGE value="design ...tracker" />
     <MESSAGE value="edit" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit" />
+    <MESSAGE value="todo css" />
+    <option name="LAST_COMMIT_MESSAGE" value="todo css" />
   </component>
 </project>
