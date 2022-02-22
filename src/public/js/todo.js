@@ -107,6 +107,7 @@ function paintTodo(newTodo){
   }
   const span_tag = document.createElement("span");
   const span_text = document.createElement("span");
+  span_text.className = "span_text";
   const button_check = document.createElement("button");
   button_check.innerText="✅";
   button_check.className="todoButton";

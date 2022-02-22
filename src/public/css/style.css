@@ -61,10 +61,10 @@ body{
 
 /*본문섹션*/
 section{
-  display: flex;
-  justify-content: space-evenly;
-  /* margin:10px; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   font-size: 1.4vw;
+  justify-items: center;
 }
 @media (max-width:500px){
   section{
@@ -106,10 +106,15 @@ section{
   .loginForm_field input, .form_field input{
     padding-left: 2vw;
     padding-right: 4vw;
-    width:20vw;
   }
 }
-
+#todo_list{
+  max-width:40vw;
+}
+.span_text{
+  overflow: hidden;
+  word-wrap: break-word;
+}
 /*트래커*/
 .form_field, .loginForm_field{
   position:relative;
@@ -128,6 +133,11 @@ section{
   display: grid;
   grid-template-columns: auto 210px auto;
   column-gap: 5px;
+}
+@media (max-width:770px) {
+  .routine_div {
+    grid-template-columns: auto 0.6fr 0.4fr;
+  }s
 }
 .filledCircle{
   fill:#a0a0ff;
