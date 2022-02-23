@@ -16,7 +16,8 @@ function getDate(){
   const month = String(date.getMonth()+1).padStart(2,"0");
   const today = String(date.getDate()).padStart(2,"0")
   const day = date.getDay();
-  const dayarray = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  // const dayarray = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const dayarray = ['일','월','화','수','목','금','토'];
   date_today.innerText = `${year}년 ${month}월 ${today}일 ${dayarray[day]}`
 }
 getDate();

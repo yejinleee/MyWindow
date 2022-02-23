@@ -51,11 +51,13 @@ html(lang="en")
                 span#dust
             button.goChat
                 img(src="/public/img/chat.png")
+
             div.chat
                 div#welcome
                     form
                         input(type="text" placeholder="room name" required)     
-                        button Enter Room
+                        button
+                            img(src="/public/img/enter.png")
                     h4 Open Rooms:
                         ul
                 div#room
@@ -73,11 +75,11 @@ html(lang="en")
         script(src="/socket.io/socket.io.js")
         script(src="/public/js/greetings.js")
         script(src="/public/js/clock.js")
-        script(src="/public/js/quotes.js")
-        //- script(src="/public/js/background.js")
+        //script(src="/public/js/quotes.js")
+        script(src="/public/js/background.js")
         script(src="/public/js/todo.js")
-        //- script(src="/public/js/weather.js")
-        //- script(src="/public/js/dust.js")
+        //script(src="/public/js/weather.js")
+        //script(src="/public/js/dust.js")
         script(src="/public/js/tracker.js")
 
         script(src="/public/js/chat.js")

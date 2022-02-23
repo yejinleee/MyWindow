@@ -90,6 +90,9 @@ socket.on("room_change", (rooms ) =>{
 const goChatBtn = document.querySelector(".goChat");
 const container = document.querySelector(".container");
 const chat = document.querySelector(".chat");
+container.classList.add("chatOpen_container");
+chat.classList.add("chatOpen_chat");
+goChatBtn.classList.add("chatOpen_btn")
 let chatOpened = false;
 function chatOpen(){
     chatOpened = !chatOpened;
