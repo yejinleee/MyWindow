@@ -1,6 +1,6 @@
 const tracker_div = document.querySelector(".div_tracker");
-const routineForm = document.querySelector("#routineForm");
-const routineInput = routineForm.querySelector("input");
+const tracker_form = document.querySelector("#tracker_form");
+const routineInput = tracker_form.querySelector("input");
 
 let routines =[];
 const ROUTINES_KEY = "routines";
@@ -137,7 +137,7 @@ function handleRoutineSubmit(event){
     saveRoutines();
     makeRoutine(newRoutineObject);
 }
-routineForm.addEventListener("submit",handleRoutineSubmit);
+tracker_form.addEventListener("submit",handleRoutineSubmit);
 
 const savedRoutines = localStorage.getItem(ROUTINES_KEY); //string
 if (savedRoutines !==null){

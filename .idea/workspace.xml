@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa1d06df-12e7-4466-afdc-64d76be12efe" name="Default Changelist" comment="todo css">
+    <list default="true" id="fa1d06df-12e7-4466-afdc-64d76be12efe" name="Default Changelist" comment="css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/4.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/public/js/tracker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/public/js/tracker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/home.pug" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/home.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +51,8 @@
       <workItem from="1643804746698" duration="20000" />
       <workItem from="1643888815713" duration="2124000" />
       <workItem from="1644070231850" duration="30000" />
-      <workItem from="1645505098105" duration="5483000" />
+      <workItem from="1645505098105" duration="8471000" />
+      <workItem from="1645613271683" duration="600000" />
     </task>
     <task id="LOCAL-00001" summary="design ...">
       <created>1643443280352</created>
@@ -96,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645507901043</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="css">
+      <created>1645533725763</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1645533725763</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +133,7 @@
     <MESSAGE value="design ...tracker" />
     <MESSAGE value="edit" />
     <MESSAGE value="todo css" />
-    <option name="LAST_COMMIT_MESSAGE" value="todo css" />
+    <MESSAGE value="css" />
+    <option name="LAST_COMMIT_MESSAGE" value="css" />
   </component>
 </project>

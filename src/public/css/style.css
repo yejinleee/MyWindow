@@ -85,25 +85,25 @@ section{
 
 
 /*투두*/
-.loginForm_field{
+.todo_field{
   display: grid;
   grid-template-columns: 8vw 1fr;
   grid-gap: 3px;
 }
 
 /* 입력 세개 테두리, 위아래패딩 */
-.loginForm_field select, .loginForm_field input, .form_field input{ 
+.todo_field select, .todo_field input, .tracker_field input{
   border : 2px solid #2b2b2b;
   border-radius: 0.25em;
   padding-top:0.3em;
   padding-bottom: 0.3em;
 }
-.loginForm_field input, .form_field input{
+.todo_field input, .tracker_field input{
   padding-left: 2vw;
   padding-right: 9vw;
 }
 @media (max-width:770px){
-  .loginForm_field input, .form_field input{
+  .todo_field input, .tracker_field input{
     padding-left: 2vw;
     padding-right: 4vw;
   }
@@ -118,11 +118,11 @@ section{
 }
 
 /*트래커*/
-.form_field, .loginForm_field{
+.tracker_field, .todo_field{
   position:relative;
   margin-bottom: 4px;
 }
-.loginForm_field button{
+.todo_field button{
   all:unset;
   position: absolute;
   top: 50%;
@@ -140,10 +140,10 @@ section{
     grid-template-columns: auto 0.6fr 0.4fr;
   }
 }
-.form_field{
+.tracker_field{
   text-align: center;
 }
-.form_field button {
+.tracker_field button {
   all: unset;
   position: absolute;
   top: 50%;
@@ -170,6 +170,17 @@ section{
   position : fixed;
   right:0;
   top:0;
+  background: none;
+  border:none;
+}
+.goChat img:hover{
+  background: rgba(231, 231, 231, 0.73);
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0/10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+  transition: 0.3s;
+}
+.goChat img{
+  width:20px;
 }
 /* 채팅 블록 초기 */
 .chat{
