@@ -68,8 +68,9 @@ section{
 }
 @media (max-width:500px){
   section{
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: auto;
+    /* flex-direction: column;
+    align-items: center; */
   }
 }
 
@@ -165,6 +166,7 @@ section{
 
 
 /* 채팅 */
+
 /* 채팅버튼 초기*/
 .goChat{
   position : fixed;
@@ -182,22 +184,21 @@ section{
 .goChat img{
   width: 3.5vw;
 }
-/* 채팅 블록 초기 */
+
+/* 채팅 블록 열고 닫기 설정 */
 .chat{
   display: none;
 }
-
-.chatOpen_container{
-  grid-template-columns: 80% 20%;
-}
 .chatOpen_chat{
   display: block;
-  border:0.4px solid;
+  /* border:0.4px solid; */
+}
+.chatOpen_container{
+  grid-template-columns: 80% 20%;
 }
 .chatOpen_btn{
   right:22%;
 }
-
 @media (max-width:770px){
   .chatOpen_container{
     grid-template-columns: 70% 30%;
@@ -205,6 +206,15 @@ section{
   .chatOpen_btn{
     right:31%;
   }
+}
+
+.chat{
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  background-color: #7373d1;
+
+  display:flex;
 }
 #welcome form{
   display: flex;
