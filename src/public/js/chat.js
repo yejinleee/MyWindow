@@ -50,12 +50,16 @@ function showRoom(){
 function handleRoomSubmit(event){
     event.preventDefault();
     const input = form.querySelector("input");
-    socket.emit("enter_room", input.value,username, showRoom); 
+    socket.emit("enter_room", input.value,username, showRoom);
     roomname = input.value;
     input.value = "";
 }
 form.addEventListener("submit",handleRoomSubmit);
 
+socket.on("participants",(count)=>{
+    const roomName = room.querySelector("#roomName");
+    roomName.innerText = `Room : ${roomname} (${count})`;
+});
 
 socket.on("welcome",(user,newCount) => {
     console.log(newCount);

@@ -62,7 +62,9 @@ wsServer.on("connection", (socket) =>{
         socket["nickname"] = username;
         socket.join(roomName);
         done();
-        socket.to(roomName).emit("welcome", socket.nickname, countRoom(roomName));
+        // socket.to(roomName).emit("welcome", socket.nickname, countRoom(roomName));
+        socket.to(roomName).emit("welcome", socket.nickname, countRoom(roomName)); ////모든방에보내려고그냥emit
+        socket.emit("participants",countRoom(roomName));
         wsServer.sockets.emit("room_change",publicRooms());
     })
     socket.on("disconnecting", ()=>{ //disconnecting : 서버와 연결이 끊어지기 직전에 발생시킴
