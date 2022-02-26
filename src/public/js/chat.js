@@ -9,10 +9,13 @@ room.hidden=true;
 const username = localStorage.getItem("username");
 let nickname = localStorage.getItem("username");
 
-function addMessage(message){
+function addMessage(message,fromMe){
     const ul = room.querySelector("ul");
     const li = document.createElement("li")
     li.innerText = message;
+    if (fromMe){
+        li.style.textAlign="end";
+    }
     ul.appendChild(li);
 }
 function handleNicknameSubmit(event){
@@ -23,15 +26,13 @@ function handleNicknameSubmit(event){
     nickname = input.value;
     const nickForm = room.querySelector("#nickname");
     nickForm.hidden = true;
-    const h4 = room.querySelector("h4");
-    h4.innerText=`Hi! ${nickname}`;
 }
 function handleMessageSubmit(event){
     event.preventDefault();
     const input = room.querySelector("#message input");
     const value = input.value;
     socket.emit("new_message", value, roomname, ()=>{ //어느방인지도 알려줘야해서 roomName도 보내야함  //백으로 보냄
-        addMessage(`${nickname} :  ${value}`)
+        addMessage(`${value} : 😀 `,true)
     });
     input.value="";
 }
@@ -41,7 +42,7 @@ function showRoom(){
     room.hidden = false;
     room.style.display="flex";
     room.style.flexDirection="column";
-    const roomName = room.querySelector("#roomName");
+    const roomName = room.querySelector("#room_roomName");
     roomName.innerText = `Room : ${roomname}`;
     const nicknameForm = room.querySelector("#nickname");
     const messageForm = room.querySelector("#message");
@@ -59,7 +60,7 @@ function handleRoomSubmit(event){
 form.addEventListener("submit",handleRoomSubmit);
 
 function nameNcount(count){
-    const roomName = room.querySelector("#roomName");
+    const roomName = room.querySelector("#room_roomName");
     roomName.innerText = `${roomname}`;
     const span = document.createElement("span");
     span.innerText = count;

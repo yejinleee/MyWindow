@@ -58,13 +58,14 @@ wsServer.on("connection", (socket) =>{
     socket.onAny((event)=>{
         console.log('발생한 Socket Event : ',event);
     })
+    wsServer.sockets.emit("room_change",publicRooms()); //방들어가기전부터 방명단 알도록
+
     socket.on("enter_room", (roomName,username,done) =>{
         socket["nickname"] = username;
         socket.join(roomName);
         done();
-        // socket.to(roomName).emit("welcome", socket.nickname, countRoom(roomName));
-        socket.to(roomName).emit("welcome", socket.nickname, countRoom(roomName)); ////모든방에보내려고그냥emit
-        socket.emit("participants",countRoom(roomName));
+        socket.to(roomName).emit("welcome", socket.nickname, countRoom(roomName)); 
+        socket.emit("participants",countRoom(roomName));////모든방에보내려고그냥emit
         wsServer.sockets.emit("room_change",publicRooms());
     })
     socket.on("disconnecting", ()=>{ //disconnecting : 서버와 연결이 끊어지기 직전에 발생시킴
@@ -75,7 +76,7 @@ wsServer.on("connection", (socket) =>{
         wsServer.sockets.emit("room_change",publicRooms());
     })
     socket.on("new_message", ( msg, room, done)=>{
-        socket.to(room).emit("new_message", `${socket.nickname} : ${msg} :`); //여기 new_message는 바로위 new_message랑 다른 지칭인데. 이렇게 같은 단어여도 된다는것
+        socket.to(room).emit("new_message", `${socket.nickname} : ${msg}`,false); //여기 new_message는 바로위 new_message랑 다른 지칭인데. 이렇게 같은 단어여도 된다는것
         done(); //실행은 프론트!
     })
     socket.on("nicknameSave", (nickname) => {

@@ -212,9 +212,12 @@ section{
   justify-content: center;
   align-items: center;
   border-radius: 25px;
-  background-color: #7373d1;
+  background-color: #c2c2c2;
+  /* background-color: #fffcfa; */
   display:flex;
-  height: 100vh;
+  height: 90vh;
+  margin : 3vh 1vw;
+  border: 0.3px solid #eeeae769;
 }
 #welcome form{
   display: flex;
@@ -236,7 +239,7 @@ section{
 #welcome form input::placeholder{
   color: #9c9ccd;
 }
-#welcome form button{
+#welcome form button{   
   background: none;
   border: none;
   cursor: pointer;
@@ -250,15 +253,29 @@ section{
 #room{
   width:100%;
 }
-#roomName{
+#room_roomName{
   padding-left: 48%;
 }
-#roomName span{
+#room_roomName span{
   margin: 10px;
   font-size: 0.5em;
   color: #3d3a3a;
 }
+#room_participants{
+
+}
+#room_chat{
+  height: calc(90vh - 66px); 
+  /* 패딩생기면더 빼야해! */
+
+}
 #room ul{
   height: inherit;
-  overflow: auto;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+}
+#room form{
+  display: grid;
+  grid-template-columns: 70% 30%;
 }
