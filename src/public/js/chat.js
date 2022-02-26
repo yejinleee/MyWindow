@@ -9,12 +9,18 @@ room.hidden=true;
 const username = localStorage.getItem("username");
 let nickname = localStorage.getItem("username");
 
-function addMessage(message,fromMe){
+function addMessage(message,from){
     const ul = room.querySelector("ul");
     const li = document.createElement("li")
     li.innerText = message;
-    if (fromMe){
-        li.style.textAlign="end";
+    switch(from){
+        case 'me':
+            li.style.textAlign="end";
+            break;
+        case 'you':
+            break;
+        case 'notice':
+            li.className="chatNotice";
     }
     ul.appendChild(li);
 }
@@ -32,7 +38,7 @@ function handleMessageSubmit(event){
     const input = room.querySelector("#message input");
     const value = input.value;
     socket.emit("new_message", value, roomname, ()=>{ //어느방인지도 알려줘야해서 roomName도 보내야함  //백으로 보냄
-        addMessage(`${value} : 😀 `,true)
+        addMessage(`${value} : 😀 `,'me')
     });
     input.value="";
 }
@@ -72,11 +78,11 @@ socket.on("participants",(count)=>{
 
 socket.on("welcome",(user,newCount) => {
     nameNcount(newCount);
-    addMessage(`${user} arrived!`)
+    addMessage(`${user} arrived!`,'notice')
 });
 socket.on("bye",(userLeft, newCount) => {
     nameNcount(newCount);
-    addMessage(`${userLeft} left...`)
+    addMessage(`${userLeft} left...`,'notice')
 });
 socket.on("new_message", addMessage);
 

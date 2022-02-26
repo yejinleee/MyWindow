@@ -69,10 +69,11 @@ html(lang="en")
                     //- form#nickname
                     //-     input(type="text" placeholder="nickname" required)  
                     //-     button Save
-                    form#message
-                        input(type="text" placeholder="message" required)
-                        button Send
-
+                    div#room_message
+                        form#message
+                            input(type="text" placeholder="message" required)
+                            button
+                                img(src="/public/img/send.png")
 
         script(src="/socket.io/socket.io.js")
         script(src="/public/js/greetings.js")

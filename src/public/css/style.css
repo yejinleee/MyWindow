@@ -211,9 +211,9 @@ section{
 .chat{
   justify-content: center;
   align-items: center;
-  border-radius: 25px;
-  background-color: #c2c2c2;
-  /* background-color: #fffcfa; */
+  border-radius: 25px 25px 10px 10px;
+  /* background-color: #c2c2c2; */
+  background-color: #fffcfa;
   display:flex;
   height: 90vh;
   margin : 3vh 1vw;
@@ -254,7 +254,7 @@ section{
   width:100%;
 }
 #room_roomName{
-  padding-left: 48%;
+  text-align: center;
 }
 #room_roomName span{
   margin: 10px;
@@ -262,20 +262,69 @@ section{
   color: #3d3a3a;
 }
 #room_participants{
-
+  border-top: 0.5px solid #cdcdcd;
+  border-bottom: 0.5px solid #cdcdcd;
 }
 #room_chat{
   height: calc(90vh - 66px); 
   /* 패딩생기면더 빼야해! */
-
+  font-size:0.9em;  
 }
-#room ul{
+#room_chat ul{
   height: inherit;
   overflow-y: scroll;
   margin: 0;
   padding: 0;
 }
-#room form{
+#room_chat li{
+  margin-top: 1px;
+  border-bottom: 0.5px solid #cdcdcd;
+}
+.chatNotice{
+  background: #d8d2ce;
+  font-size: 0.5em;
+  text-align: center;
+  width: fit-content;
+  padding: 0 13px;
+  margin: 0 auto;
+  list-style: none;
+  border: none !important;
+  border-radius: 15px;
+  color: #ffffff;
+}
+#room_message{
+  font-size: 0.8em;
+  border-top: 0.5px solid #cdcdcd;
+}
+#room_message form{
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 80% auto;
+  justify-content: space-between;
+}
+#room_message input{
+  all: unset;
+  padding-left: 10px;
+}
+#room_message img{
+  height: 18px;
+}
+#room_message button{
+  border-radius: 10px;
+  background: none;
+  cursor: pointer;
+  background-color: #fff8f4;
+  box-shadow: 1px 1px 1px #d6d6d5;
+  transition-duration: 0.2s;
+  border-color: #f3ede9;
+  width: fit-content;
+  text-align: center;
+}
+#room_message button:active{
+  margin-left: 3px;
+  margin-top: 3px;
+  box-shadow: none;
+  background-color: #fdf2eb;
+}
+#room_message button:hover{
+  background-color: #fdf2eb;
 }

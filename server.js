@@ -76,7 +76,7 @@ wsServer.on("connection", (socket) =>{
         wsServer.sockets.emit("room_change",publicRooms());
     })
     socket.on("new_message", ( msg, room, done)=>{
-        socket.to(room).emit("new_message", `${socket.nickname} : ${msg}`,false); //여기 new_message는 바로위 new_message랑 다른 지칭인데. 이렇게 같은 단어여도 된다는것
+        socket.to(room).emit("new_message", `${socket.nickname} : ${msg}`,'you'); //여기 new_message는 바로위 new_message랑 다른 지칭인데. 이렇게 같은 단어여도 된다는것
         done(); //실행은 프론트!
     })
     socket.on("nicknameSave", (nickname) => {
