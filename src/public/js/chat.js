@@ -39,6 +39,8 @@ let roomname;
 function showRoom(){
     welcome.hidden = true;
     room.hidden = false;
+    room.style.display="flex";
+    room.style.flexDirection="column";
     const roomName = room.querySelector("#roomName");
     roomName.innerText = `Room : ${roomname}`;
     const nicknameForm = room.querySelector("#nickname");
@@ -56,20 +58,23 @@ function handleRoomSubmit(event){
 }
 form.addEventListener("submit",handleRoomSubmit);
 
-socket.on("participants",(count)=>{
+function nameNcount(count){
     const roomName = room.querySelector("#roomName");
-    roomName.innerText = `Room : ${roomname} (${count})`;
+    roomName.innerText = `${roomname}`;
+    const span = document.createElement("span");
+    span.innerText = count;
+    roomName.append(span);
+}
+socket.on("participants",(count)=>{
+    nameNcount(count);
 });
 
 socket.on("welcome",(user,newCount) => {
-    console.log(newCount);
-    const roomName = room.querySelector("#roomName");
-    roomName.innerText = `Room : ${roomname} (${newCount})`;
+    nameNcount(newCount);
     addMessage(`${user} arrived!`)
 });
 socket.on("bye",(userLeft, newCount) => {
-    const roomName = room.querySelector("#roomName");
-    roomName.innerText = `Room : ${roomname} (${newCount})`;
+    nameNcount(newCount);
     addMessage(`${userLeft} left...`)
 });
 socket.on("new_message", addMessage);

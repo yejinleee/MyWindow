@@ -213,8 +213,8 @@ section{
   align-items: center;
   border-radius: 25px;
   background-color: #7373d1;
-
   display:flex;
+  height: 100vh;
 }
 #welcome form{
   display: flex;
@@ -245,4 +245,20 @@ section{
 #welcome form button img{
   height : 5.5vh;
   vertical-align: middle;
+}
+
+#room{
+  width:100%;
+}
+#roomName{
+  padding-left: 48%;
+}
+#roomName span{
+  margin: 10px;
+  font-size: 0.5em;
+  color: #3d3a3a;
+}
+#room ul{
+  height: inherit;
+  overflow: auto;
 }
