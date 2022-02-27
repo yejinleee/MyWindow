@@ -2,7 +2,7 @@ import express from "express";
 import http from "http"; //node.js에 내장되어있어서 설치필요X 
 // import {WebSocketServer} from "ws";
 import {Server} from "socket.io";
-import {instrument} from "@socket.io/admin-ui";
+// import {instrument} from "@socket.io/admin-ui";
 
 const app = express();
 const handleListen = ()=>console.log(`Listening on http://localhost:3000`)
@@ -32,9 +32,9 @@ const wsServer = new Server(server,{
       credentials: true
     }
   });
-  instrument(wsServer, {
-    auth: false
-  });
+//   instrument(wsServer, {
+//     auth: false
+//   });
   
 function publicRooms(){
     const {
