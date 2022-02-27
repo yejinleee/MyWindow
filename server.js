@@ -9,7 +9,8 @@ const handleListen = ()=>console.log(`Listening on http://localhost:3000`)
 
 const PORT = process.env.PORT
 app.listen(PORT)
-
+import path from 'path';
+const __dirname = path.resolve();
 
 ////
 
