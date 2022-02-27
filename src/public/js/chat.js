@@ -75,7 +75,6 @@ function nameNcount(count){
 socket.on("participants",(count)=>{
     nameNcount(count);
 });
-
 socket.on("welcome",(user,newCount) => {
     nameNcount(newCount);
     addMessage(`${user} arrived!`,'notice')

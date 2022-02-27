@@ -295,6 +295,8 @@ section{
 #room_message{
   font-size: 0.8em;
   border-top: 0.5px solid #cdcdcd;
+  background: #fdf2eb;
+  border-radius: 10px;
 }
 #room_message form{
   display: grid;
