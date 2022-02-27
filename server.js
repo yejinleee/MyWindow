@@ -7,6 +7,9 @@ import {instrument} from "@socket.io/admin-ui";
 const app = express();
 const handleListen = ()=>console.log(`Listening on http://localhost:3000`)
 
+const PORT = process.env.PORT
+app.listen(PORT)
+
 
 ////
 
